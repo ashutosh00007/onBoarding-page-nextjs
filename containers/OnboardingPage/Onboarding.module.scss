@@ -1,0 +1,228 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 5rem;
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 5rem;
+  & > h1 {
+    font-size: 2.25rem;
+    line-height: 1.5rem;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
+    & > h1 {
+      font-size: 1.75rem;
+      line-height: 1.25rem;
+    }
+  }
+}
+
+.stepsContainer {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 5rem;
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
+  }
+}
+.step {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: #ffffff;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transition: 150ms ease-out;
+}
+.step.active {
+  background: #664de5;
+  border: 1px solid #664de5;
+  color: #ffffff;
+}
+.progress {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.15);
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  & > span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #664de5;
+    transition: 250ms ease-in-out;
+  }
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  & > h2 {
+    font-size: 2.25rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  & > p {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.75);
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 1.75rem;
+    & > h2 {
+      font-size: 1.75rem;
+      line-height: 2rem;
+    }
+  }
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  & input {
+    margin-bottom: 1rem;
+    border-radius: 0.35rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 0.75rem 0.5rem;
+    outline: 0;
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  & > label {
+    margin-bottom: 0.5rem;
+    color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    gap: 0.25rem;
+    & > p {
+      color: rgba(0, 0, 0, 0.35);
+    }
+  }
+}
+.inputWithExample {
+  display: flex;
+  & > div {
+    background-color: rgb(230, 228, 228);
+    margin-bottom: 1rem;
+    padding: 0.75rem 0.5rem;
+    border-radius: 0.35rem 0 0rem 0.35rem;
+    color: rgba(0, 0, 0, 0.35);
+    font-size: 0.75rem;
+  }
+  & > input {
+    width: 100%;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+}
+.button {
+  border: 0;
+  border-radius: 0.35rem;
+  padding: 0.75rem 0.5rem;
+  background-color: #664de5;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+
+  transition: all 150ms ease-out;
+  &:hover {
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+.s3btn {
+  width: 60%;
+  margin: auto;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+.profileContainer {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-bottom: 3rem;
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  max-width: 45%;
+  border-radius: 0.35rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+  & > svg,
+  & > h3 {
+    margin-bottom: 1rem;
+    transition: all 150ms ease-in-out;
+  }
+  & > p {
+    color: rgba(0, 0, 0, 0.75);
+  }
+}
+.profile.active {
+  border: 1px solid #664de5;
+  & > svg {
+    color: #664de5;
+  }
+}
+.completed {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
+  background-color: #664de5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 3rem;
+  & > svg {
+    color: #ffffff;
+    font-size: 1.75rem;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
+}
+.loading {
+  & > svg {
+    font-size: 4rem;
+    color: #664de5;
+    animation: rotate 750ms ease-in-out infinite;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
